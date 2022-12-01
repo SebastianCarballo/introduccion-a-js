@@ -15,18 +15,77 @@ function validarSalarioMensual(salarioMensual) {
 const $calcularSalarioAnual = document.querySelector('#calcular-salario-anual-usuario');
 $calcularSalarioAnual.onclick = function (event) {
 	event.preventDefault();
+	borrarErroresLi();
 
-	const salarioMensual = Number(document.querySelector('#salario-mensual-usuario').value);
+	const salarioMensualUsuario = Number(document.querySelector('#salario-mensual-usuario').value);
 
-	const salarioAnual = calcularSalarioAnual(salarioMensual);
+	const salarioAnual = calcularSalarioAnual(salarioMensualUsuario);
 
 	document.querySelector('#salario-anual-usuario').value = salarioAnual;
 };
 
-function validarFormulario(event) {
+document.querySelector('#reset').onclick = function (event) {
+	$form.reset();
+	borrarErroresLi();
+};
+
+function validarFormulario(event){
 	event.preventDefault();
+	 borrarErroresLi();
 	const $form = document.querySelector('#calculadora-salario-anual');
+	console.log($form);
 
 	const salarioMensualUsuario = $form['salario-mensual-usuario'].value;
 	console.log(salarioMensualUsuario);
+
+	const errorSalarioMensualUsuario = validarSalarioMensual(salarioMensualUsuario);
+	console.log(errorSalarioMensualUsuario);
+
+	const errores = {
+		salarioMensualUsuario: errorSalarioMensualUsuario,
+	};
+	console.log(errores);
+
+	const esExito = manejarerrores(errores) === 0;
+	if(esExito){
+		$form.className = 'oculto';
+		document.querySelector('#exito').className = '';
+	}
+
 }
+
+function borrarErroresLi() {
+	const $erroresLi = document.querySelectorAll('li');
+	for (let i = 0; i < $erroresLi.length; i++) {
+		$erroresLi[i].remove();
+	}
+}
+
+function manejarerrores(errores){
+	const keys = Object.keys(errores);
+	console.log(keys);
+	const $errores = document.querySelector('#errores');
+	console.log($errores);
+
+	keys.forEach(function (key){
+		const error = errores[key];
+		console.log(error);
+
+		if(error){
+			$form[key].className = 'error';
+
+			const $error = document.createElement('li');
+			console.log($error);
+			$error.innerText = error;
+			$errores.appendChild($error);
+		}else{
+			$form[key].className = 'exito';
+		}
+
+	});
+}
+
+
+
+const $form = document.querySelector('#calculadora-salario-anual');
+$form.onclick = validarFormulario;
