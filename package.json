@@ -5,6 +5,7 @@
 		"jquery": "^3.6.1"
 	},
 	"devDependencies": {
+		"jshint": "^2.13.6",
 		"prettier": "2.8.0"
 	}
 }
