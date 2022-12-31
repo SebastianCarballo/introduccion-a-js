@@ -71,3 +71,5 @@ $formulario.addEventListener('submit', function (event) {
 		});
 	}
 });
+
+$formulario.onsubmit = validarInputSalarioAnualUsuario;
