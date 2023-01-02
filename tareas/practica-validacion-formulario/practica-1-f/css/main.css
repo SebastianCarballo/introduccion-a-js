@@ -98,3 +98,40 @@ button#calcular-salario-mensual-usuario:hover {
     border: solid 2 px #702CF5;
     ;
 }
+
+input#salario-anual-usaurio {
+    font-weight: bolder;
+}
+
+div#formulario-enviado {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    font-size: 25px;
+    margin: 50px;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+div#formulario-enviado i {
+    font-size: 50px;
+
+}
+
+div#formulario-no-enviado {
+    display: flex;
+    color: black;
+    font-size: 25px;
+    margin: 50px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div#formulario-no-enviado i {
+    font-size: 60px;
+
+}
