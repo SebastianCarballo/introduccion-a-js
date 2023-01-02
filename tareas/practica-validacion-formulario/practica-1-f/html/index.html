@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="author" content="Sebastian Carballo" />
+		<meta name="description" content="Tarea 1.2 de la clase 5 " />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>Tarea 1</title>
+
+		<link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+		<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/node_modules/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+		<link href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css" rel="stylesheet" />
+
+		<link href="/node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/main.css" />
+	</head>
+
+	<body>
+		<div class="container" id="titulo">
+			<h1>Tarea 1 - clase 5</h1>
+			<i class="bi bi-terminal"></i>
+		</div>
+		<div class="container">
+			<div class="row" id="parrafos">
+				<p class="col">
+					<strong>TAREA 1:</strong> Crear un formulario donde el usuario pueda ingresar su salario anual.
+				</p>
+				<p class="col">
+					<strong>TAREA 2:</strong> Cuando el usuario haga click en el botón <strong>"calcular"</strong>, mostrar el
+					salario mensual en una caja de texto deshabilitada.
+				</p>
+			</div>
+		</div>
+		<form action="" class="container" id="formulario-calculadora-salario-mensual">
+			<h4>CALCULADORA SALARIO MENSUAL <i class="bi bi-calculator"></i></h4>
+			<div class="container">
+				<label for="salario-anual-usuario">Ingrese su Salario Anual</label>
+				<input
+					type="text"
+					class="form-control"
+					name="salario-anual-usuario"
+					id="salario-anual-usuario"
+					placeholder="ej:100000"
+					maxlength="12"
+				/>
+			</div>
+			<div class="container">
+				<label for="salario-mensual-usuario">Salario Mensual</label>
+				<input type="text" class="form-control" id="salario-mensual-usuario" disabled />
+			</div>
+
+			<div class="container d-grid gap-2">
+				<button id="calcular-salario-mensual-usuario" class="btn btn-primary btn-lg" type="submit">CALCULAR</button>
+				<button type="reset" id="borrar" class="btn btn-dark">Borrar</button>
+			</div>
+
+			<div class="errores">
+				<ul></ul>
+			</div>
+		</form>
+		<div class="container" id="mensajes-formulario">
+            <div id="formulario-enviado" class="alert alert-success" role="alert" style="display: none;">
+                <i class="bi bi-check-circle"></i>
+                <p>El formulario a sido enviado con éxito</p>
+            </div>
+            
+            <div id="formulario-no-enviado" class="alert alert-danger" role="alert" style="display: none;">
+            <i class="bi bi-exclamation-triangle"></i>
+                <p>Atencion el formulario tiene errores</p>
+            </div>
+        </div>
+		<script src="../js/tarea-1.js"></script>
+		<script src="../js/pruebas.js"></script>
+	</body>
+</html>
